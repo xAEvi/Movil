@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">LoginTarea</string>
+    <string name="group_name">Grupo #1: Molina Xavier, Duchi Walter, Lalama Colombia, Solís Alejandro, Ascencio Juan</string>
+    <string name="app_title">Preescolar Digital</string>
+    <string name="nombre_de_usuario">Nombre de Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="logo_desc">Logo de Preescolar Digital</string>
+    <string name="fondo_desc">Fondo de la aplicación</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="acceso_concedido">Acceso Concedido</string>
+    <string name="datos_incorrectos">Datos incorrectos</string>
+
+    <string name="registro_titulo">Registro de Usuario</string>
+    <string name="hint_cedula">Cédula</string>
+    <string name="hint_nombres">Nombres</string>
+    <string name="hint_apellidos">Apellidos</string>
+    <string name="hint_edad">Edad</string>
+    <string name="label_nacionalidad">Nacionalidad:</string>
+    <string name="label_genero">Género:</string>
+    <string name="label_estado_civil">Estado Civil:</string>
+    <string name="radio_soltero">Soltero</string>
+    <string name="radio_casado">Casado</string>
+    <string name="radio_otro">Otro</string>
+    <string name="label_fecha_nacimiento">Fecha de Nacimiento:</string>
+    <string name="button_seleccionar_fecha">Seleccionar Fecha</string>
+    <string name="fecha_no_seleccionada">Ninguna fecha seleccionada</string>
+    <string name="label_nivel_ingles">Nivel de Inglés:</string>
+    <string name="button_registrar">Registrar</string>
+    <string name="button_borrar">Borrar</string>
+    <string name="button_cancelar">Cancelar</string>
+
+    <string name="button_cargar">Cargar Datos</string>
+    <string name="registro_exitoso">Usuario registrado con éxito</string>
+    <string name="datos_guardados_exito">Datos guardados exitosamente en el archivo.</string>
+    <string name="error_guardar_datos">Error al guardar los datos: %s</string>
+    <string name="error_cargar_datos">Error al cargar los datos: %s</string>
+    <string name="datos_no_encontrados">No se encontraron datos guardados.</string>
+    <string name="error_formato_datos">Error: El formato de los datos guardados es incorrecto.</string>
+    <string name="error_estado_civil">Por favor, seleccione un estado civil.</string>
+    <string name="error_fecha_nacimiento">Por favor, seleccione la fecha de nacimiento.</string>
+    <string name="dialogo_titulo_datos_registrados">Datos Registrados</string>
+    <string name="dialogo_ok">OK</string>
+    <string name="dialogo_datos_mensaje_formato">
+        Cédula: %1$s\n
+        Nombres: %2$s\n
+        Apellidos: %3$s\n
+        Edad: %4$s\n
+        Nacionalidad: %5$s\n
+        Género: %6$s\n
+        Estado Civil: %7$s\n
+        Fecha Nacimiento: %8$s\n
+        Nivel Inglés: %9$s estrellas
+    </string>
+
+    <string-array name="nacionalidades_array">
+        <item>Ecuatoriana</item>
+        <item>Colombiana</item>
+        <item>Peruana</item>
+        <item>Venezolana</item>
+        <item>Otra</item>
+    </string-array>
+    <string-array name="generos_array">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+        <item>Prefiero no decir</item>
+    </string-array>
+
+    <string name="dialog_title_acerca_de">Acerca del Grupo</string>
+    <string name="titulo_integrantes">Integrantes:</string>
+    <string name="lista_integrantes">
+        - Molina Xavier\n
+        - Duchi Walter\n
+        - Lalama Antonieta\n
+        - Solis Alejandro\n
+        - Ascencio Juan
+    </string>
+    <string name="descripcion_foto_grupo">Foto del grupo de trabajo</string>
+    <string name="dialog_cerrar">Cerrar</string>
+</resources>

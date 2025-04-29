@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/imageViewGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/zoom"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descripcion_foto_grupo" />
+
+    <TextView
+        android:id="@+id/textViewIntegrantesTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_integrantes"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewIntegrantesLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/lista_integrantes"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textSize="20sp" />
+
+</LinearLayout>
