@@ -112,9 +112,16 @@
                     android:maxLines="1"
                     android:textColor="?android:textColorPrimary"
                     android:textColorHint="?android:textColorSecondary" />
+
+                <CheckBox
+                    android:id="@+id/mantenerSesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="a" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Botón login -->
+
             <Button
                 android:id="@+id/buttonLogin"
                 android:layout_width="0dp"

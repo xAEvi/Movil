@@ -10,6 +10,7 @@
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="acceso_concedido">Acceso Concedido</string>
     <string name="datos_incorrectos">Datos incorrectos</string>
+    <string name="mantener_sesion">Mantener sesión</string>
 
     <string name="registro_titulo">Registro de Usuario</string>
     <string name="hint_cedula">Cédula</string>
