@@ -1,13 +1,16 @@
 package com.example.logintarea;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -18,11 +21,31 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Home extends AppCompatActivity {
 
+    private Button buttonClearData;
+    private SharedPreferences sharedPreferences;
+
+    private static final String PREFS_NAME = "LoginPrefs";
+    private static final String PREF_USERNAME = "username";
+    private static final String PREF_PASSWORD = "password";
+    private static final String PREF_KEEP_LOGGED_IN = "keepLoggedIn";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
+
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+
+        buttonClearData = findViewById(R.id.buttonClearData);
+
+        buttonClearData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearLoginData();
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -57,24 +80,32 @@ public class Home extends AppCompatActivity {
 
     private void showAcercaDeDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // Inflar el layout personalizado
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_acerca_de, null);
 
-        // Establecer la vista personalizada en el constructor del diálogo
         builder.setView(dialogView);
-
-        // Establecer el título (opcional, ya que el layout podría tenerlo)
         builder.setTitle(R.string.dialog_title_acerca_de);
 
-        // Añadir un botón para cerrar
         builder.setPositiveButton(R.string.dialog_cerrar, (dialog, which) -> {
-            // Simplemente cierra el diálogo
             dialog.dismiss();
         });
 
-        // Crear y mostrar el AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void clearLoginData() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(PREF_KEEP_LOGGED_IN);
+        editor.remove(PREF_USERNAME);
+        editor.remove(PREF_PASSWORD);
+        editor.apply();
+
+        Toast.makeText(this, R.string.login_data_cleared, Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(Home.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
