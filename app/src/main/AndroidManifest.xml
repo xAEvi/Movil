@@ -13,9 +13,24 @@
         android:theme="@style/Theme.LoginTarea"
         tools:targetApi="31">
         <activity
-            android:name=".Home"
-            android:theme="@style/Theme.Logintarea.ActionBar"
+            android:name=".Colores"
             android:exported="false" />
+        <activity
+            android:name=".Animales"
+            android:exported="false" />
+        <activity
+            android:name=".Rutinas"
+            android:exported="false" />
+        <activity
+            android:name=".Numeros"
+            android:exported="false" />
+        <activity
+            android:name=".Vocales"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:theme="@style/Theme.Logintarea.ActionBar" />
         <activity
             android:name=".Registrar"
             android:exported="false" />

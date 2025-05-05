@@ -15,5 +15,10 @@
     <color name="secondary_color">#FFFFD166</color> <!-- Amarillo -->
     <color name="text_color">#FF333333</color>     <!-- Texto oscuro -->
     <color name="text_color_light">#FFFFFFFF</color> <!-- Texto claro -->
-    <color name="button_color">#FF4CAF50</color>   <!-- Verde -->
+    <color name="button_color">#FF4CAF50</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>   <!-- Verde -->
 </resources>

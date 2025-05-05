@@ -82,4 +82,7 @@
     </string>
     <string name="descripcion_foto_grupo">Foto del grupo de trabajo</string>
     <string name="dialog_cerrar">Cerrar</string>
+    <string name="title_activity_animales">Animales</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

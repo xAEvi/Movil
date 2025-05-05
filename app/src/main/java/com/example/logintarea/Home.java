@@ -21,13 +21,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Home extends AppCompatActivity {
 
-    private Button buttonClearData;
     private SharedPreferences sharedPreferences;
 
     private static final String PREFS_NAME = "LoginPrefs";
     private static final String PREF_USERNAME = "username";
     private static final String PREF_PASSWORD = "password";
     private static final String PREF_KEEP_LOGGED_IN = "keepLoggedIn";
+
+    private Button btnNumeros, btnVocales, btnRutinas, btnAnimales, btnColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +38,37 @@ public class Home extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
-        buttonClearData = findViewById(R.id.buttonClearData);
+        btnNumeros = findViewById(R.id.btnNumeros);
+        btnVocales = findViewById(R.id.btnVocales);
+        btnRutinas = findViewById(R.id.btnRutinas);
+        btnAnimales = findViewById(R.id.btnAnimales);
+        btnColores = findViewById(R.id.btnColores);
 
-        buttonClearData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearLoginData();
-            }
+        btnNumeros.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, Numeros.class);
+            startActivity(intent);
         });
+
+        btnVocales.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, Vocales.class);
+            startActivity(intent);
+        });
+
+        btnRutinas.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, Rutinas.class);
+            startActivity(intent);
+        });
+
+        btnAnimales.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, Animales.class);
+            startActivity(intent);
+        });
+
+        btnColores.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, Colores.class);
+            startActivity(intent);
+        });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -68,7 +92,7 @@ public class Home extends AppCompatActivity {
             Toast.makeText(this, "Opción 1 seleccionada", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.menu2) {
-            Toast.makeText(this, "Opción 2 seleccionada", Toast.LENGTH_SHORT).show();
+            clearLoginData();
             return true;
         } else if (id == R.id.menuAcerca) {
             showAcercaDeDialog();

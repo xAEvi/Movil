@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/menu1"
-        android:title="Opción1" />
+        android:title="Opción 1" />
     <item
         android:id="@+id/menu2"
-        android:title="Opción2" />
+        android:title="Cerrar Sesión" />
     <item
         android:id="@+id/menuAcerca"
         android:title="Acerca de" />
