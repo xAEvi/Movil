@@ -85,4 +85,19 @@
     <string name="title_activity_animales">Animales</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Sección de colores -->
+    <string name="titulo_colores">¡Aprendamos los Colores!</string>
+    <string name="rojo">Rojo</string>
+    <string name="azul">Azul</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="verde">Verde</string>
+    <string name="naranja">Naranja</string>
+    <string name="morado">Morado</string>
+    <string name="rosa">Rosa</string>
+    <string name="marron">Marrón</string>
+    <string name="negro">Negro</string>
+    <string name="blanco">Blanco</string>
+    <string name="gris">Gris</string>
+    <string name="celeste">Celeste</string>
 </resources>
