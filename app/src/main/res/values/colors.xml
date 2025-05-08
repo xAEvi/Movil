@@ -38,4 +38,11 @@
 
     <color name="fondo_colores">#FFF5F5F5</color>
     <color name="borde_color">#FFD3D3D3</color>
+
+    <!-- Nuevos colores para texto con contorno -->
+    <color name="texto_contorno_claro">#FFFFFF</color>
+    <color name="texto_contorno_oscuro">#000000</color>
+    <color name="titulo_modo_claro">#FF6D4CFF</color>
+    <color name="titulo_modo_oscuro">#FFBB86FC</color>
+    <color name="boton_reproducir">#FF4CAF50</color>
 </resources>

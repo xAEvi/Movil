@@ -7,4 +7,12 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+
+    <!-- Estilo para texto con contorno -->
+    <style name="TextWithContour" parent="TextAppearance.AppCompat">
+        <item name="android:shadowColor">@color/texto_contorno_oscuro</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
 </resources>

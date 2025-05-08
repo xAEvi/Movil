@@ -100,4 +100,5 @@
     <string name="blanco">Blanco</string>
     <string name="gris">Gris</string>
     <string name="celeste">Celeste</string>
+    <string name="reproducir_todos">Reproducir Todos</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo_colores"
+    android:background="?android:attr/colorBackground"
     tools:context=".Colores">
 
     <!-- Fondo que mantiene proporciones -->
@@ -28,14 +28,27 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/tituloColores"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_colores"
-                android:textSize="24sp"
-                android:textColor="@color/primary_color"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:textColor="?attr/colorOnBackground"/>
+
+            <Button
+                android:id="@+id/btnReproducirTodos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reproducir_todos"
+                android:textSize="18sp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/boton_reproducir"
+                android:textColor="@color/white"
+                android:elevation="4dp"
+                android:padding="12dp"/>
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -69,9 +82,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/rojo"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -97,9 +114,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/azul"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -125,9 +146,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/amarillo"
-                            android:textColor="@color/text_color"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -154,9 +179,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/verde"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -182,9 +211,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/naranja"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -210,9 +243,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/morado"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -239,9 +276,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/rosa"
-                            android:textColor="@color/text_color"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -267,9 +308,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marron"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -295,9 +340,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/negro"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -324,9 +373,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/blanco"
-                            android:textColor="@color/text_color"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -352,9 +405,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/gris"
-                            android:textColor="@color/text_color_light"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -380,9 +437,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/celeste"
-                            android:textColor="@color/text_color"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:shadowColor="@color/white"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>
