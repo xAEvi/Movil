@@ -7,6 +7,15 @@
     android:background="@color/fondo_colores"
     tools:context=".Colores">
 
+    <!-- Fondo que mantiene proporciones -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="?android:windowBackground"
+        android:contentDescription="@string/fondo_desc" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
