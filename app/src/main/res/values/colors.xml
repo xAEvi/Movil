@@ -11,14 +11,38 @@
     <color name="teal_700">#FF018786</color>
 
     <!-- Colores personalizados para la app -->
-    <color name="primary_color">#FF6D4CFF</color>  <!-- Morado claro -->
-    <color name="secondary_color">#FFFFD166</color> <!-- Amarillo -->
-    <color name="text_color">#FF333333</color>     <!-- Texto oscuro -->
-    <color name="text_color_light">#FFFFFFFF</color> <!-- Texto claro -->
+    <color name="primary_color">#FF6D4CFF</color>
+    <color name="secondary_color">#FFFFD166</color>
+    <color name="text_color">#FF333333</color>
+    <color name="text_color_light">#FFFFFFFF</color>
     <color name="button_color">#FF4CAF50</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>   <!-- Verde -->
+    <color name="black_overlay">#66000000</color>
+
+    <!-- Colores para la pantalla de aprendizaje -->
+    <color name="rojo">#FF0000</color>
+    <color name="azul">#0000FF</color>
+    <color name="amarillo">#FFFF00</color>
+    <color name="verde">#00FF00</color>
+    <color name="naranja">#FFA500</color>
+    <color name="morado">#800080</color>
+    <color name="rosa">#FFC0CB</color>
+    <color name="marron">#A52A2A</color>
+    <color name="negro">#000000</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="gris">#808080</color>
+    <color name="celeste">#87CEEB</color>
+
+    <color name="fondo_colores">#FFF5F5F5</color>
+    <color name="borde_color">#FFD3D3D3</color>
+
+    <!-- Nuevos colores para texto con contorno -->
+    <color name="texto_contorno_claro">#FFFFFF</color>
+    <color name="texto_contorno_oscuro">#000000</color>
+    <color name="titulo_modo_claro">#FF6D4CFF</color>
+    <color name="titulo_modo_oscuro">#FFBB86FC</color>
+    <color name="boton_reproducir">#FF4CAF50</color>
 </resources>
