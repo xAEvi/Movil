@@ -449,4 +449,23 @@
             </GridLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- Vista de imagen emergente - Ahora está al final para que aparezca encima de todo -->
+    <FrameLayout
+        android:id="@+id/imageOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/colorImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/imagen_color_desc" />
+    </FrameLayout>
 </FrameLayout>

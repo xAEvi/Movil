@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -18,6 +20,8 @@ public class Colores extends AppCompatActivity {
     private int currentColorIndex = 0;
     private boolean isPlayingAll = false;
     private Button btnReproducirTodos;
+    private FrameLayout imageOverlay;
+    private ImageView colorImage;
 
     // Arrays de IDs
     private final int[] cardIds = {
@@ -34,12 +38,28 @@ public class Colores extends AppCompatActivity {
             R.raw.blanco, R.raw.gris, R.raw.celeste
     };
 
+    private final int[] imageIds = {
+            R.drawable.rojo, R.drawable.azul, R.drawable.amarillo,
+            R.drawable.hierba, R.drawable.naranja, R.drawable.morado,
+            R.drawable.rosa, R.drawable.marron, R.drawable.negro,
+            R.drawable.blanco, R.drawable.gris, R.drawable.celeste
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colores);
 
         btnReproducirTodos = findViewById(R.id.btnReproducirTodos);
+        imageOverlay = findViewById(R.id.imageOverlay);
+        colorImage = findViewById(R.id.colorImage);
+
+        // Configurar el overlay para cerrar al tocar
+        imageOverlay.setOnClickListener(v -> {
+            hideImageOverlay();
+            stopCurrentSound();
+        });
+
         setupColorCards();
         setupReproducirTodosButton();
     }
@@ -48,12 +68,14 @@ public class Colores extends AppCompatActivity {
         for (int i = 0; i < cardIds.length; i++) {
             CardView cardView = findViewById(cardIds[i]);
             final int soundId = soundIds[i];
+            final int imageId = imageIds[i];
 
             cardView.setOnClickListener(v -> {
                 // Detener la reproducción de todos si está activa
                 if (isPlayingAll) {
                     stopPlayingAll();
                 }
+                showImageForColor(imageId);
                 playSound(soundId);
                 animateCard(v);
             });
@@ -76,10 +98,12 @@ public class Colores extends AppCompatActivity {
             // Terminó la reproducción o fue cancelada
             isPlayingAll = false;
             btnReproducirTodos.setEnabled(true);
+            hideImageOverlay();
             return;
         }
 
         CardView currentCard = findViewById(cardIds[currentColorIndex]);
+        showImageForColor(imageIds[currentColorIndex]);
         playSoundForAll(soundIds[currentColorIndex], currentCard);
         animateCard(currentCard);
     }
@@ -110,11 +134,30 @@ public class Colores extends AppCompatActivity {
         isPlayingAll = false;
         handler.removeCallbacksAndMessages(null);
         btnReproducirTodos.setEnabled(true);
+        hideImageOverlay();
 
         // Restaurar color de la tarjeta actual si es necesario
         if (currentColorIndex < cardIds.length) {
             CardView currentCard = findViewById(cardIds[currentColorIndex]);
             currentCard.setCardBackgroundColor(getResources().getColor(getColorResIdForIndex(currentColorIndex)));
+        }
+    }
+
+    private void showImageForColor(int imageResId) {
+        colorImage.setImageResource(imageResId);
+        imageOverlay.setVisibility(View.VISIBLE);
+        imageOverlay.bringToFront(); // Asegurar que el overlay esté encima de todo
+    }
+
+    private void hideImageOverlay() {
+        imageOverlay.setVisibility(View.GONE);
+    }
+
+    private void stopCurrentSound() {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 
@@ -145,6 +188,7 @@ public class Colores extends AppCompatActivity {
         mediaPlayer.setOnCompletionListener(mp -> {
             mp.release();
             mediaPlayer = null;
+            hideImageOverlay();
         });
         mediaPlayer.start();
     }
