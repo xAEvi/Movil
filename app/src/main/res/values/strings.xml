@@ -102,4 +102,17 @@
     <string name="celeste">Celeste</string>
     <string name="reproducir_todos">Reproducir Todos</string>
     <string name="imagen_color_desc">Imagen representativa del color</string>
+
+    <!-- Sección de números -->
+    <string name="titulo_juego_numeros">¡Ordena los Números!</string>
+    <string name="racha_inicial">Racha: %d</string>
+    <string name="intentos_inicial">Intentos restantes: %d</string>
+    <string name="comprobar_boton">Comprobar</string>
+    <string name="mensaje_felicitacion">¡Felicidades! Lo has ordenado correctamente.</string>
+    <string name="jugar_otra_vez_boton">Jugar otra vez</string>
+
+    <string name="correcto">¡Correcto!</string>
+    <string name="incorrecto">Incorrecto.</string>
+    <string name="mensaje_juego_terminado_fallo_simple">¡Oh no! Te quedaste sin intentos.\nLa racha se reinicia a 0.</string>
+
 </resources>

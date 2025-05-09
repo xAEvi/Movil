@@ -5,6 +5,187 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".Numeros">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Título del juego -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/titulo_juego_numeros"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Racha -->
+    <TextView
+        android:id="@+id/streakTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/racha_inicial"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <!-- Contenedor para los números arrastrables -->
+    <!-- LinearLayout es simple para mostrar los 5 elementos en fila. -->
+    <!-- La lógica de Drag and Drop y reordenamiento se manejará en el código Java/Kotlin. -->
+    <LinearLayout
+        android:id="@+id/numbersContainerLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streakTextView">
+
+        <!-- Aquí se añadirán o se definirán los 5 TextViews que representan los números -->
+        <!-- Por ejemplo, puedes definirlos directamente aquí o añadirlos programáticamente -->
+        <!-- Ejemplo de un TextView de número (puedes duplicar 5 veces y cambiar ID/tools:text) -->
+        <TextView
+            android:id="@+id/number1TextView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="5" />
+
+        <TextView
+            android:id="@+id/number2TextView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            tools:text="2"/>
+
+        <TextView
+            android:id="@+id/number3TextView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            tools:text="8"/>
+
+        <TextView
+            android:id="@+id/number4TextView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            tools:text="1"/>
+
+        <TextView
+            android:id="@+id/number5TextView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            tools:text="10"/>
+
+    </LinearLayout>
+
+    <!-- Indicador de intentos restantes -->
+    <TextView
+        android:id="@+id/attemptsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/intentos_inicial"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numbersContainerLinearLayout" />
+
+    <!-- Estado (Correcto/Incorrecto) -->
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Incorrecto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attemptsTextView" />
+
+    <!-- Botón Comprobar -->
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/comprobar_boton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusTextView" />
+
+    <!-- Overlay para mensaje de éxito y jugar de nuevo -->
+    <LinearLayout
+        android:id="@+id/successOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/successMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="@string/mensaje_felicitacion"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/jugar_otra_vez_boton" />
+
+</LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

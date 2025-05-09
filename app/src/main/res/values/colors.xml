@@ -45,4 +45,8 @@
     <color name="titulo_modo_claro">#FF6D4CFF</color>
     <color name="titulo_modo_oscuro">#FFBB86FC</color>
     <color name="boton_reproducir">#FF4CAF50</color>
+
+    <color name="green_correct">#4CAF50</color>
+    <color name="red_incorrect">#F44336</color>
+    <color name="blue_default">#2196F3</color>
 </resources>
