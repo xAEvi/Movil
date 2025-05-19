@@ -5,6 +5,83 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".Rutinas">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Botón para cambiar entre galería y lista de tareas -->
+    <Button
+        android:id="@+id/buttonToggleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ver Mi Rutina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón para crear nueva rutina -->
+    <Button
+        android:id="@+id/buttonCreateNewRoutine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Crear Nueva Rutina"
+        app:layout_constraintTop_toBottomOf="@id/buttonToggleView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"/> <!-- Inicialmente visible con la galería -->
+
+
+    <!-- Contenedor para la Galería de Rutinas -->
+    <ScrollView
+        android:id="@+id/galleryScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonCreateNewRoutine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutGalleryItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <!-- Contenedor para la Lista de Tareas (Checklist) -->
+    <LinearLayout
+        android:id="@+id/checklistContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/buttonToggleView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutChecklistItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonResetRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reiniciar Rutina"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

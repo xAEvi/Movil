@@ -16,12 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginTarea"
         tools:targetApi="31">
-
         <activity
             android:name=".Colores"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Animales"
             android:exported="false" />
@@ -46,8 +44,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

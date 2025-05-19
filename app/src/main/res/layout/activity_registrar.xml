@@ -8,14 +8,14 @@
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_registrar"
+        android:id="@+id/main_registrar_simplified"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        tools:context=".Registrar"> <!-- Make sure context points to your Registrar activity -->
+        tools:context=".Registrar">
 
         <TextView
-            android:id="@+id/textViewRegistroTitulo"
+            android:id="@+id/textViewRegistroTituloSimplified"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/registro_titulo"
@@ -25,176 +25,54 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Cedula -->
+        <!-- Username -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFieldCedula"
+            android:id="@+id/textFieldUsername"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:hint="@string/hint_cedula"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRegistroTitulo"
+            android:hint="@string/hint_username"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRegistroTituloSimplified"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextCedula"
+                android:id="@+id/editTextUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Nombres -->
+        <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFieldNombres"
+            android:id="@+id/textFieldPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/hint_nombres"
-            app:layout_constraintTop_toBottomOf="@+id/textFieldCedula"
+            android:hint="@string/hint_password"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintTop_toBottomOf="@+id/textFieldUsername"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextNombres"
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName|textCapWords" />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Apellidos -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFieldApellidos"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="@string/hint_apellidos"
-            app:layout_constraintTop_toBottomOf="@+id/textFieldNombres"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextApellidos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName|textCapWords" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Edad -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFieldEdad"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="@string/hint_edad"
-            app:layout_constraintTop_toBottomOf="@+id/textFieldApellidos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextEdad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Nacionalidad Label -->
-        <TextView
-            android:id="@+id/textViewLabelNacionalidad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/label_nacionalidad"
-            android:labelFor="@id/spinnerNacionalidad"
-            app:layout_constraintTop_toBottomOf="@+id/textFieldEdad"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Nacionalidad Spinner -->
-        <Spinner
-            android:id="@+id/spinnerNacionalidad"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelNacionalidad"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Genero Label -->
-        <TextView
-            android:id="@+id/textViewLabelGenero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/label_genero"
-            android:labelFor="@id/spinnerGenero"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerNacionalidad"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Genero Spinner -->
-        <Spinner
-            android:id="@+id/spinnerGenero"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelGenero"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Estado Civil Label -->
-        <TextView
-            android:id="@+id/textViewLabelEstadoCivil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/label_estado_civil"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGenero"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Estado Civil RadioGroup -->
-        <RadioGroup
-            android:id="@+id/radioGroupEstadoCivil"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelEstadoCivil"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <RadioButton
-                android:id="@+id/radioButtonSoltero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_soltero" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCasado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/radio_casado" />
-
-            <RadioButton
-                android:id="@+id/radioButtonOtro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/radio_otro" />
-        </RadioGroup>
 
         <!-- Fecha Nacimiento Label -->
         <TextView
-            android:id="@+id/textViewLabelFechaNacimiento"
+            android:id="@+id/textViewLabelFechaNacimientoSimplified"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/label_fecha_nacimiento"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroupEstadoCivil"
+            app:layout_constraintTop_toBottomOf="@+id/textFieldPassword"
             app:layout_constraintStart_toStartOf="parent" />
 
         <!-- Button to Pick Date -->
@@ -205,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/button_seleccionar_fecha"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelFechaNacimiento"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLabelFechaNacimientoSimplified"
             app:layout_constraintStart_toStartOf="parent" />
 
         <!-- TextView to Display Selected Date -->
@@ -221,84 +99,93 @@
             app:layout_constraintTop_toTopOf="@+id/buttonPickDate"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Nivel Ingles Label -->
+        <!-- Gender Label -->
         <TextView
-            android:id="@+id/textViewLabelNivelIngles"
+            android:id="@+id/textViewLabelGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/label_nivel_ingles"
+            android:text="@string/label_genero"
             app:layout_constraintTop_toBottomOf="@+id/buttonPickDate"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Nivel Ingles RatingBar -->
-        <RatingBar
-            android:id="@+id/ratingBarNivelIngles"
-            android:layout_width="wrap_content"
+        <!-- Gender RadioGroup -->
+        <RadioGroup
+            android:id="@+id/radioGroupGender"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:numStars="5"
-            android:stepSize="1.0"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelNivelIngles"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLabelGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_masculino" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/radio_femenino" />
+
+            <RadioButton
+                android:id="@+id/radioButtonOtherGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/radio_otro_genero" />
+        </RadioGroup>
+
 
         <!-- Buttons -->
-        <!-- Adjusted constraints for 4 buttons -->
         <Button
-            android:id="@+id/buttonRegistrar"
+            android:id="@+id/buttonRegistrarSimplified"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/button_registrar"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBarNivelIngles"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupGender"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonBorrar"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_simplified"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_simplified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
 
         <Button
-            android:id="@+id/buttonBorrar"
+            android:id="@+id/buttonBorrarSimplified"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/button_borrar"
-            app:layout_constraintTop_toTopOf="@+id/buttonRegistrar"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonRegistrar"
-            app:layout_constraintStart_toEndOf="@+id/buttonRegistrar"
-            app:layout_constraintEnd_toStartOf="@+id/buttonCargarDatos"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toTopOf="@+id/buttonRegistrarSimplified"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonRegistrarSimplified"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_simplified"
+            app:layout_constraintEnd_toStartOf="@+id/buttonCancelarSimplified" />
 
-        <!-- **** NEW BUTTON **** -->
-        <Button
-            android:id="@+id/buttonCargarDatos"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:text="@string/button_cargar"
-            app:layout_constraintTop_toTopOf="@+id/buttonRegistrar"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonRegistrar"
-            app:layout_constraintStart_toEndOf="@+id/buttonBorrar"
-            app:layout_constraintEnd_toStartOf="@+id/buttonCancelar"
-            app:layout_constraintHorizontal_weight="1"/>
-        <!-- **** END NEW BUTTON **** -->
 
         <Button
-            android:id="@+id/buttonCancelar"
+            android:id="@+id/buttonCancelarSimplified"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:text="@string/button_cancelar"
-            app:layout_constraintTop_toTopOf="@+id/buttonRegistrar"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonRegistrar"
-            app:layout_constraintStart_toEndOf="@+id/buttonCargarDatos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toTopOf="@+id/buttonRegistrarSimplified"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonRegistrarSimplified"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
